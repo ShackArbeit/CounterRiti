@@ -1,0 +1,31 @@
+*{
+  position:relative;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+.CounterBox{
+  display:flex;
+  border-bottom:1px solid #b6b6b6;
+  padding-bottom:5px;
+  justify-content:center;
+  align-items:center;
+  width:100vw;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+.Text{
+  font-size:20px;
+  font-weight:800;
+}
+.Button{
+  border:2px solid green;
+  width:60px;
+  height:60px;
+  display:block;
+  margin-left:20px;
+  margin-right:20px;
+  font-weight:800;
+  background-color:#c6ffd2;
+  color:black;
+}
