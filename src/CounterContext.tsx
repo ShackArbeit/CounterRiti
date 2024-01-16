@@ -51,11 +51,11 @@ export const CounterContext = createContext<CounterContextType>({
     incrementCounter9: () => {},
     decrementCounter9: () => {},
     resetCounter9: () => {},
-    counter10: 0,
+    // counter10: 0,
     // setCounter10: () => {},
-    incrementCounter10: () => {},
-    decrementCounter10: () => {},
-    resetCounter10: () => {},
+    // incrementCounter10: () => {},
+    // decrementCounter10: () => {},
+    // resetCounter10: () => {},
 })
 
 
@@ -70,7 +70,7 @@ const CounterProvider = ({ children }: { children: React.ReactNode }) => {
   const [counter7, setCounter7] = useState(0);
   const [counter8, setCounter8] = useState(0);
   const [counter9, setCounter9] = useState(0);
-  const [counter10, setCounter10] = useState(0);
+//   const [counter10, setCounter10] = useState(0);
   
   const incrementCounter1 = () => setCounter1(counter1 + 1);
   const decrementCounter1 = () => setCounter1(counter1 - 1);
@@ -99,9 +99,6 @@ const CounterProvider = ({ children }: { children: React.ReactNode }) => {
   const incrementCounter9 = () => setCounter9(counter9 + 1);
   const decrementCounter9 = () => setCounter9(counter9 - 1);
   const resetCounter9=()=>setCounter9(0)
-  const incrementCounter10 = () => setCounter10(counter10 + 1);
-  const decrementCounter10 = () => setCounter10(counter10 - 1);
-  const resetCounter10=()=>setCounter10(0)
 
   const contextValue: CounterContextType = {
     counter1,
@@ -140,11 +137,7 @@ const CounterProvider = ({ children }: { children: React.ReactNode }) => {
     incrementCounter9,
     decrementCounter9,
     resetCounter9,
-    counter10,
-    incrementCounter10,
-    decrementCounter10,
-    resetCounter10,
-  };
+}
 
   return (
     <CounterContext.Provider value={contextValue}>

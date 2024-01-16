@@ -38,8 +38,8 @@ export interface CounterContextType {
     incrementCounter9: () => void;
     decrementCounter9: () => void;
     resetCounter9:()=>void;
-    counter10: number;
-    incrementCounter10: () => void;
-    decrementCounter10: () => void;
-    resetCounter10:()=>void;
+    // counter10: number;
+    // incrementCounter10: () => void;
+    // decrementCounter10: () => void;
+    // resetCounter10:()=>void;
   }

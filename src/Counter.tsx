@@ -42,13 +42,16 @@ const Counter = () => {
         incrementCounter9,
         decrementCounter9,
         resetCounter9,
-        counter10,
-        incrementCounter10,
-        decrementCounter10,
-        resetCounter10}= useContext(CounterContext)
+      }= useContext(CounterContext)
 
   return (
     <>
+     <div className='CounterBox'>
+            <button onClick={decrementCounter9} className='Button'>➖</button>
+           <p className='Text'> 主桌的分數是 ： {counter9}</p>
+           <button onClick={incrementCounter9} className='Button'>➕</button>
+           <button onClick={resetCounter9} className='Button' >重設 </button>
+    </div>
     <div className='CounterBox'>
             <button onClick={decrementCounter1} className='Button'>➖</button>
            <p className='Text'>第一桌分數是 ： {counter1}</p>
@@ -96,18 +99,6 @@ const Counter = () => {
            <p className='Text'>第八桌分數是 ： {counter8}</p>
            <button onClick={incrementCounter8} className='Button'>➕</button>
            <button onClick={resetCounter8} className='Button' >重設 </button>
-    </div>
-    <div className='CounterBox'>
-            <button onClick={decrementCounter9} className='Button'>➖</button>
-           <p className='Text'>第九桌分數是 ： {counter9}</p>
-           <button onClick={incrementCounter9} className='Button'>➕</button>
-           <button onClick={resetCounter9} className='Button' >重設 </button>
-    </div>
-    <div className='CounterBox'>
-            <button onClick={decrementCounter10} className='Button'>➖</button>
-           <p className='Text'>第十桌分數是 ： {counter10}</p>
-           <button onClick={incrementCounter10} className='Button'>➕</button>
-           <button onClick={resetCounter10} className='Button' >重設 </button>
     </div>
     </>
   )
