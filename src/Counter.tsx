@@ -43,6 +43,16 @@ const Counter = () => {
         decrementCounter9,
         resetCounter9,
       }= useContext(CounterContext)
+      const counters = [counter1, counter2, counter3, counter4, counter5, counter6, counter7, counter8, counter9];
+
+      let maxCounter = counters[0];
+  
+
+      for (let j = 1; j < counters.length; j++) {
+          if (counters[j] > maxCounter) {
+              maxCounter = counters[j];
+          }
+      }
 
   return (
     <>
@@ -99,7 +109,8 @@ const Counter = () => {
            <p className='Text'>第八桌分數是 ： {counter8}</p>
            <button onClick={incrementCounter8} className='Button'>➕</button>
            <button onClick={resetCounter8} className='Button' >重設 </button>
-    </div>
+    </div> 
+    <p className='Text'>最大分數是：{maxCounter}</p>
     </>
   )
 }
