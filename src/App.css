@@ -18,6 +18,14 @@
   font-size:20px;
   font-weight:800;
 }
+.TextMax{
+  font-size:30px;
+  font-weight:800;
+  text-align:center;
+  padding-top:10px;
+  padding-bottom:10px;
+  color:red;
+}
 .Button{
   border:2px solid green;
   width:60px;

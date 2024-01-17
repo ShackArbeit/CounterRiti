@@ -1,5 +1,7 @@
 import { useContext } from "react"
 import { CounterContext } from "./CounterContext"
+import Button from '@mui/material/Button';
+import Swal from 'sweetalert2'
 import './App.css'
 
 
@@ -47,18 +49,28 @@ const Counter = () => {
 
       let maxCounter = counters[0];
   
+      let maxTable = 1; 
 
       for (let j = 1; j < counters.length; j++) {
           if (counters[j] > maxCounter) {
               maxCounter = counters[j];
+              maxTable = j + 1; 
           }
+      }
+      const handleEnd=()=>{
+       Swal.fire({
+              title: '猜謎結束',
+              text: `恭喜第 ${maxTable} 桌以${maxCounter}分獲得優勝 !`,
+              icon: 'success',
+              confirmButtonText: '返回'
+            })
       }
 
   return (
     <>
      <div className='CounterBox'>
-            <button onClick={decrementCounter9} className='Button'>➖</button>
-           <p className='Text'> 主桌的分數是 ： {counter9}</p>
+     <button onClick={decrementCounter9} className='Button'>➖</button>
+           <p className='Text'>主桌(九桌)分數是 ： {counter9}</p>
            <button onClick={incrementCounter9} className='Button'>➕</button>
            <button onClick={resetCounter9} className='Button' >重設 </button>
     </div>
@@ -110,7 +122,15 @@ const Counter = () => {
            <button onClick={incrementCounter8} className='Button'>➕</button>
            <button onClick={resetCounter8} className='Button' >重設 </button>
     </div> 
-    <p className='Text'>最大分數是：{maxCounter}</p>
+    <div className='TextMax'>
+       {`最新領先的是第 ${maxTable} 桌，分數是：${maxCounter}`}
+       <Button variant="contained" 
+              sx={{
+              fontSize:'25px',
+              marginLeft:'50px'}}
+              onClick={ handleEnd}
+              >總結</Button>
+    </div>
     </>
   )
 }
