@@ -59,6 +59,11 @@ export const CounterContext = createContext<CounterContextType>({
 })
 
 
+/**
+ * Provides counter states and operations to descendant components.
+ * @param {{ children: React.ReactNode }} props React children components.
+ * @returns {JSX.Element} Provider element
+ */
 const CounterProvider = ({ children }: { children: React.ReactNode }) => {
  
   const [counter1, setCounter1] = useState(0);
@@ -72,70 +77,62 @@ const CounterProvider = ({ children }: { children: React.ReactNode }) => {
   const [counter9, setCounter9] = useState(0);
 
   
-  const incrementCounter1 = () => setCounter1(counter1 + 1);
+  /** Increment counter for table 1 */
+  const incrementCounter1 = () => setCounter1(c => c + 1);
  
+  /** Decrement counter for table 1 */
   const decrementCounter1 = () => {
-    if (counter1 > 0) {
-      setCounter1(counter1 - 1);
-    }
-  }
-  const resetCounter1=()=>setCounter1(0)
-  const incrementCounter2 = () => setCounter2(counter2 + 1);
+    setCounter1(c => (c > 0 ? c - 1 : 0));
+  };
+  const resetCounter1 = () => setCounter1(0);
+
+  const incrementCounter2 = () => setCounter2(c => c + 1);
   const decrementCounter2 = () => {
-    if (counter2 > 0) {
-      setCounter2(counter2 - 1);
-    }
-  }
-  const resetCounter2=()=>setCounter2(0)
-  const incrementCounter3 = () => setCounter3(counter3 + 1);
+    setCounter2(c => (c > 0 ? c - 1 : 0));
+  };
+  const resetCounter2 = () => setCounter2(0);
+
+  const incrementCounter3 = () => setCounter3(c => c + 1);
   const decrementCounter3 = () => {
-    if (counter3 > 0) {
-      setCounter3(counter3 - 1);
-    }
-  }
-  const resetCounter3=()=>setCounter3(0)
-  const incrementCounter4 = () => setCounter4(counter4 + 1);
+    setCounter3(c => (c > 0 ? c - 1 : 0));
+  };
+  const resetCounter3 = () => setCounter3(0);
+
+  const incrementCounter4 = () => setCounter4(c => c + 1);
   const decrementCounter4 = () => {
-    if (counter4 > 0) {
-      setCounter4(counter4 - 1);
-    }
-  }
-  const resetCounter4=()=>setCounter4(0)
-  const incrementCounter5 = () => setCounter5(counter5 + 1);
+    setCounter4(c => (c > 0 ? c - 1 : 0));
+  };
+  const resetCounter4 = () => setCounter4(0);
+
+  const incrementCounter5 = () => setCounter5(c => c + 1);
   const decrementCounter5 = () => {
-    if (counter5 > 0) {
-      setCounter5(counter5 - 1);
-    }
-  }
-  const resetCounter5=()=>setCounter5(0)
-  const incrementCounter6 = () => setCounter6(counter6 + 1);
+    setCounter5(c => (c > 0 ? c - 1 : 0));
+  };
+  const resetCounter5 = () => setCounter5(0);
+
+  const incrementCounter6 = () => setCounter6(c => c + 1);
   const decrementCounter6 = () => {
-    if (counter6 > 0) {
-      setCounter6(counter6 - 1);
-    }
-  }
-  const resetCounter6=()=>setCounter6(0)
-  const incrementCounter7 = () => setCounter7(counter7 + 1);
+    setCounter6(c => (c > 0 ? c - 1 : 0));
+  };
+  const resetCounter6 = () => setCounter6(0);
+
+  const incrementCounter7 = () => setCounter7(c => c + 1);
   const decrementCounter7 = () => {
-    if (counter7 > 0) {
-      setCounter7(counter7 - 1);
-    }
-  }
-  const resetCounter7=()=>setCounter7(0)
-  const incrementCounter8 = () => setCounter8(counter8 + 1);
+    setCounter7(c => (c > 0 ? c - 1 : 0));
+  };
+  const resetCounter7 = () => setCounter7(0);
+
+  const incrementCounter8 = () => setCounter8(c => c + 1);
   const decrementCounter8 = () => {
-    if (counter8 > 0) {
-      setCounter8(counter8 - 1);
-    }
-  }
-  const resetCounter8=()=>setCounter8(0)
-  const incrementCounter9 = () => setCounter9(counter9 + 1);
+    setCounter8(c => (c > 0 ? c - 1 : 0));
+  };
+  const resetCounter8 = () => setCounter8(0);
+
+  const incrementCounter9 = () => setCounter9(c => c + 1);
   const decrementCounter9 = () => {
-    if (counter9 > 0) {
-      setCounter1(counter9 - 1);
-    }
-  }
-  const resetCounter9=()=>setCounter9(0)
+    setCounter9(c => (c > 0 ? c - 1 : 0));
+  };
+  const resetCounter9 = () => setCounter9(0);
 
   const contextValue: CounterContextType = {
     counter1,

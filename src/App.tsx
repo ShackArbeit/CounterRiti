@@ -1,7 +1,11 @@
 import './App.css'
-import CounterProvider from './CounterContext'
-import Counter from './Counter'
+import CounterProvider from './components/CounterContext'
+import Counter from './components/Counter'
 
+/**
+ * Root application component.
+ * @returns {JSX.Element} React element
+ */
 function App() {
 
   return (
